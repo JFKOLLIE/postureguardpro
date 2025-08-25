@@ -540,6 +540,87 @@
             </div>
         </div>
     </section>
+<!-- Footer with Policy Links -->
+<footer class="bg-gray-900 text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <!-- Company Info -->
+            <div>
+                <h3 class="text-lg font-semibold mb-4">PostureGuard Pro</h3>
+                <p class="text-gray-400 text-sm mb-4">Transform your posture in 21 days with smart vibration technology.</p>
+                <div class="text-sm text-gray-400">
+                    <p>11468 Marketplace Drive N</p>
+                    <p>Ste 600-1014</p>
+                    <p>Champlin MN 55316</p>
+                </div>
+            </div>
+            
+            <!-- Customer Service -->
+            <div>
+                <h3 class="text-lg font-semibold mb-4">Customer Service</h3>
+                <ul class="space-y-2 text-sm text-gray-400">
+                    <li><a href="mailto:support@postureguardpro.com" class="hover:text-white">Contact Support</a></li>
+                    <li><a href="#faq" class="hover:text-white">FAQ</a></li>
+                    <li><a href="#" onclick="openTrackingModal()" class="hover:text-white">Track Order</a></li>
+                    <li><a href="#" onclick="openReturnsModal()" class="hover:text-white">Returns</a></li>
+                </ul>
+            </div>
+            
+            <!-- Legal -->
+            <div>
+                <h3 class="text-lg font-semibold mb-4">Legal</h3>
+                <ul class="space-y-2 text-sm text-gray-400">
+                    <li><a href="#" onclick="openPolicyModal('terms')" class="hover:text-white">Terms of Service</a></li>
+                    <li><a href="#" onclick="openPolicyModal('privacy')" class="hover:text-white">Privacy Policy</a></li>
+                    <li><a href="#" onclick="openPolicyModal('refund')" class="hover:text-white">Refund Policy</a></li>
+                    <li><a href="#" onclick="openPolicyModal('shipping')" class="hover:text-white">Shipping Policy</a></li>
+                </ul>
+            </div>
+            
+            <!-- Company -->
+            <div>
+                <h3 class="text-lg font-semibold mb-4">Company</h3>
+                <ul class="space-y-2 text-sm text-gray-400">
+                    <li><a href="#" onclick="openPolicyModal('about')" class="hover:text-white">About Us</a></li>
+                    <li><a href="#testimonials" class="hover:text-white">Reviews</a></li>
+                    <li><a href="#contact" class="hover:text-white">Contact</a></li>
+                    <li><a href="#" onclick="openAdminLogin()" class="hover:text-gray-300 opacity-50">•</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Bottom Footer -->
+        <div class="border-t border-gray-800 mt-8 pt-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <p class="text-sm text-gray-400">© 2024 PostureGuard Pro. All rights reserved.</p>
+                <div class="flex space-x-4 mt-4 md:mt-0">
+                    <span class="text-sm text-gray-400">Secure SSL Checkout</span>
+                    <span class="text-sm text-gray-400">30-Day Guarantee</span>
+                    <span class="text-sm text-gray-400">Free Shipping</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Policy Modals -->
+<div id="policyModal" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50">
+    <div class="flex items-center justify-center min-h-screen p-4">
+        <div class="bg-white rounded-lg p-8 max-w-4xl w-full max-h-screen overflow-y-auto">
+            <div class="flex justify-between items-center mb-6">
+                <h2 id="policyTitle" class="text-2xl font-bold text-gray-900"></h2>
+                <button onclick="closePolicyModal()" class="text-gray-400 hover:text-gray-600">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+            <div id="policyContent" class="prose max-w-none">
+                <!-- Policy content will be loaded here -->
+            </div>
+        </div>
+    </div>
+</div>
 
     <!-- Admin Login Modal -->
 <div id="adminLoginModal" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50">
