@@ -1037,6 +1037,16 @@ function exportOrders() {
     document.body.removeChild(link);
 }
 </script>
+
+<script>
+// Admin credentials (change these to your desired login)
+const ADMIN_CREDENTIALS = {
+    email: 'support@postureguardpro.com',
+    password: 'Posture2025'
+};
+// ... rest of your existing JavaScript
+</script>
+    
 <script>
 // Admin credentials (change these to your desired login)
 const ADMIN_CREDENTIALS = {
@@ -1045,7 +1055,139 @@ const ADMIN_CREDENTIALS = {
 };
 // ... rest of your existing JavaScript
 </script>
+<script>
+// Admin credentials (change these to your desired login)
+const ADMIN_CREDENTIALS = {
+    email: 'admin@postureguardpro.com',
+    password: 'PostureAdmin123'
+};
 
+// All your existing admin JavaScript functions here...
+// (openAdminLogin, closeAdminLogin, adminLogin, etc.)
+
+// ADD THE POLICY CODE HERE - INSIDE THE SAME SCRIPT TAGS
+// Policy content
+const policyContent = {
+    terms: {
+        title: 'Terms of Service',
+        content: `
+            <h3>1. Agreement to Terms</h3>
+            <p>By purchasing PostureGuard Pro, you agree to these terms and conditions.</p>
+            
+            <h3>2. Product Description</h3>
+            <p>PostureGuard Pro is a posture correction device designed to help improve posture through gentle vibration reminders.</p>
+            
+            <h3>3. Use of Product</h3>
+            <p>This product is intended for healthy adults. Consult your healthcare provider before use if you have any medical conditions.</p>
+            
+            <h3>4. Limitation of Liability</h3>
+            <p>PostureGuard Pro is not liable for any indirect, incidental, or consequential damages arising from product use.</p>
+            
+            <h3>5. Governing Law</h3>
+            <p>These terms are governed by the laws of Minnesota, United States.</p>
+        `
+    },
+    privacy: {
+        title: 'Privacy Policy',
+        content: `
+            <h3>Information We Collect</h3>
+            <p>We collect information you provide when making a purchase, including name, email, and shipping address.</p>
+            
+            <h3>How We Use Information</h3>
+            <p>We use your information to process orders, provide customer support, and send order updates.</p>
+            
+            <h3>Information Sharing</h3>
+            <p>We do not sell or share your personal information with third parties except as necessary to fulfill your order.</p>
+            
+            <h3>Data Security</h3>
+            <p>We use industry-standard security measures to protect your personal information.</p>
+            
+            <h3>Contact Us</h3>
+            <p>For privacy questions, contact us at support@postureguardpro.com</p>
+        `
+    },
+    refund: {
+        title: 'Refund Policy',
+        content: `
+            <h3>30-Day Money-Back Guarantee</h3>
+            <p>We offer a full refund within 30 days of purchase if you're not completely satisfied.</p>
+            
+            <h3>How to Request a Refund</h3>
+            <p>Email support@postureguardpro.com with your order number and reason for return.</p>
+            
+            <h3>Return Process</h3>
+            <p>Once approved, you'll receive a prepaid return label. Ship the item back in original packaging.</p>
+            
+            <h3>Refund Timeline</h3>
+            <p>Refunds are processed within 5-7 business days after we receive the returned item.</p>
+            
+            <h3>Condition Requirements</h3>
+            <p>Items must be in original condition with all accessories and packaging.</p>
+        `
+    },
+    shipping: {
+        title: 'Shipping Policy',
+        content: `
+            <h3>Free Worldwide Shipping</h3>
+            <p>We offer free shipping on all PostureGuard Pro orders worldwide.</p>
+            
+            <h3>Processing Time</h3>
+            <p>Orders are processed within 1-2 business days.</p>
+            
+            <h3>Delivery Time</h3>
+            <p>Delivery takes 7-14 business days depending on your location.</p>
+            
+            <h3>Tracking Information</h3>
+            <p>You'll receive tracking information via email once your order ships.</p>
+            
+            <h3>Shipping Issues</h3>
+            <p>Contact support@postureguardpro.com for any shipping concerns.</p>
+        `
+    },
+    about: {
+        title: 'About Us',
+        content: `
+            <h3>Our Mission</h3>
+            <p>To help people improve their posture and confidence through innovative technology.</p>
+            
+            <h3>Our Story</h3>
+            <p>PostureGuard Pro was created by a team of health professionals and engineers who understand the impact of poor posture on daily life.</p>
+            
+            <h3>Our Commitment</h3>
+            <p>We're committed to providing high-quality products backed by excellent customer service and a 30-day guarantee.</p>
+            
+            <h3>Contact Information</h3>
+            <p>Email: support@postureguardpro.com<br>
+            Address: 11468 Marketplace Drive N, Ste 600-1014, Champlin MN 55316</p>
+        `
+    }
+};
+
+function openPolicyModal(policyType) {
+    const modal = document.getElementById('policyModal');
+    const title = document.getElementById('policyTitle');
+    const content = document.getElementById('policyContent');
+    
+    if (policyContent[policyType]) {
+        title.textContent = policyContent[policyType].title;
+        content.innerHTML = policyContent[policyType].content;
+        modal.classList.remove('hidden');
+    }
+}
+
+function closePolicyModal() {
+    document.getElementById('policyModal').classList.add('hidden');
+}
+
+function openTrackingModal() {
+    alert('Please email support@postureguardpro.com with your order number for tracking information.');
+}
+
+function openReturnsModal() {
+    alert('For returns, please email support@postureguardpro.com with your order number.');
+}
+
+</script>
 
 
 </body>
