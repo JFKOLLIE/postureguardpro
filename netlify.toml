@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netlify Configuration Files</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <style>
+        .code-block {
+            background: #1e1e1e;
+            color: #d4d4d4;
+            border-radius: 8px;
+            padding: 20px;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            line-height: 1.5;
+            overflow-x: auto;
+        }
+        .file-header {
+            background: #2563eb;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px 8px 0 0;
+            font-weight: bold;
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <div class="container mx-auto px-4 py-8">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-8">
+                <h1 class="text-3xl font-bold text-gray-800 mb-2">
+                    <i class="fas fa-cog mr-2"></i>Netlify Configuration Files
+                </h1>
+                <p class="text-gray-600">Configuration files for PostureGuard Pro store deployment</p>
+            </div>
+
+            <!-- netlify.toml File -->
+            <div class="mb-8">
+                <div class="file-header">
+                    <i class="fas fa-file-code mr-2"></i>netlify.toml
+                </div>
+                <div class="code-block">
+[build]
+  publish = "."
+  command = "npm run build"
+  functions = "netlify/functions"
+
+[build.environment]
+  NODE_VERSION = "18"
+
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/:splat"
+  status = 200
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[functions]
+  directory = "netlify/functions"
+  node_bundler = "esbuild"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+[[headers]]
+  for = "/api/*"
+  [headers.values]
+    Access-Control-Allow-Origin = "*"
+    Access-Control-Allow-Headers = "Content-Type"
+    Access-Control-Allow-Methods = "GET, POST, OPTIONS"
+                </div>
+            </div>
+
+            <!-- .env.example File -->
+            <div class="mb-8">
+                <div class="file-header">
+                    <i class="fas fa-key mr-2"></i>.env.example
+                </div>
+                <div class="code-block">
+# Stripe Configuration
+STRIPE_SECRET_KEY=sk_live_your_stripe_secret_key_here
+STRIPE_PUBLISHABLE_KEY=pk_live_your_stripe_publishable_key_here
+STRIPE_WEBHOOK_SECRET=whsec_your_webhook_secret_here
+
+# Site Configuration
+SITE_URL=https://your-site-name.netlify.app
+ADMIN_PASSWORD=your_secure_admin_password_here
+
+# Email Configuration (Optional - for contact form)
+EMAIL_SERVICE_API_KEY=your_email_service_api_key
+CONTACT_EMAIL=support@postureguardpro.com
+
+# Product Configuration
+PRODUCT_PRICE=2999  # Price in cents ($29.99)
+PRODUCT_NAME=PostureGuard Pro - Smart Posture Corrector
+CURRENCY=usd
+
+# Shipping Configuration
+SHIPPING_RATE=0     # Free shipping
+TAX_RATE=0          # Set according to your location
+
+# Development/Production Environment
+NODE_ENV=production
+                </div>
+            </div>
+
+            <!-- .env File -->
+            <div class="mb-8">
+                <div class="file-header">
+                    <i class="fas fa-eye-slash mr-2"></i>.env (Your Actual File - Keep Private!)
+                </div>
+                <div class="code-block">
+# Stripe Configuration
+STRIPE_SECRET_KEY=sk_live_your_new_secret_key_after_security_fix
+STRIPE_PUBLISHABLE_KEY=pk_live_your_publishable_key_from_stripe_dashboard
+STRIPE_WEBHOOK_SECRET=whsec_get_this_after_setting_up_webhooks
+
+# Site Configuration
+SITE_URL=https://postureguardpro.netlify.app
+ADMIN_PASSWORD=SecurePassword123!
+
+# Email Configuration
+CONTACT_EMAIL=support@postureguardpro.com
+
+# Product Configuration
+PRODUCT_PRICE=2999
+PRODUCT_NAME=PostureGuard Pro - Smart Posture Corrector
+CURRENCY=usd
+
+# Environment
+NODE_ENV=production
+                </div>
+            </div>
+
+            <!-- .gitignore File -->
+            <div class="mb-8">
+                <div class="file-header">
+                    <i class="fas fa-ban mr-2"></i>.gitignore
+                </div>
+                <div class="code-block">
+# Environment variables
+.env
+.env.local
+.env.production
+
+# Dependencies
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Build outputs
+dist/
+build/
+
+# Netlify
+.netlify/
+
+# MacOS
+.DS_Store
+
+# Windows
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Logs
+*.log
+                </div>
+            </div>
+
+            <!-- Setup Instructions -->
+            <div class="bg-white rounded-lg shadow-md p-6 mb-8">
+                <h2 class="text-xl font-bold text-gray-800 mb-4">
+                    <i class="fas fa-rocket mr-2 text-blue-600"></i>Deployment Instructions
+                </h2>
+                
+                <div class="space-y-4">
+                    <div class="flex items-start space-x-3">
+                        <span class="bg-blue-600 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold">1</span>
+                        <div>
+                            <strong>Create GitHub Repository:</strong>
+                            <p class="text-gray-600">Create a new repository and push all files to GitHub</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start space-x-3">
+                        <span class="bg-blue-600 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold">2</span>
+                        <div>
+                            <strong>Connect to Netlify:</strong>
+                            <p class="text-gray-600">Link your GitHub repository to Netlify for automatic deployments</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start space-x-3">
+                        <span class="bg-blue-600 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold">3</span>
+                        <div>
+                            <strong>Set Environment Variables:</strong>
+                            <p class="text-gray-600">Add your Stripe keys and other variables in Netlify dashboard</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start space-x-3">
+                        <span class="bg-blue-600 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold">4</span>
+                        <div>
+                            <strong>Deploy and Test:</strong>
+                            <p class="text-gray-600">Deploy your site and test payment processing</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Important Notes -->
+            <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4">
+                <div class="flex">
+                    <div class="flex-shrink-0">
+                        <i class="fas fa-exclamation-triangle text-yellow-400"></i>
+                    </div>
+                    <div class="ml-3">
+                        <p class="text-sm text-yellow-700">
+                            <strong>Important:</strong> Never commit your actual .env file to GitHub. Only commit .env.example. 
+                            Set your real environment variables in the Netlify dashboard under Site Settings → Environment Variables.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+    <script id="html_badge_script1">
+        window.__genspark_remove_badge_link = "https://www.genspark.ai/api/html_badge/" +
+            "remove_badge?token=To%2FBnjzloZ3UfQdcSaYfDlmO6E3erdcPzyh94qrKHv4UUL%2FIw3Zs72FGElYhdirEY4V4Cod%2B8aAFnAACy4Vu54NRm5HrgNiiC83htVxggiBe2ew6Xq7Zduio0oaYI1MlOboDSza12jh0q7opew8b6VVVDXcYEW5%2FZ6f%2FtKea%2FJhTwEb0WB50Bm8EUW96y2jQTEG6FwZ7ZqI1a%2BK0uRw4a6jwWjtmIJXbXRREKGaDi5bsWLpdr4agr1rXJi9r46Gp2UIY0FOF3kJd1dXgkxeSXy1RZ%2B2VfUKTpw8xWdbV6CRMLfKSGAgR4yzwoYnL1e0aEe6nCeInnHIcUPmK6dw6uO2figp8VLrNWa9ypnTS0D6TsIw1N1FUh2P3h8cgH63kKv5eZi9VsyfvXI3D%2Bo9UGFqamQLDbYKI%2F4MTEqKwZY3kH0OyW%2BNSg3XqVTBRjjgOFW%2FaDXv4mdia%2BIyR27n8BGjUV86G63uDnhWFNBYM%2BHVHr4wmY80iF6VRluN90BS7v4UYYgtCVETSEf7zR8Yjhw%3D%3D";
+        window.__genspark_locale = "en-US";
+        window.__genspark_token = "To/BnjzloZ3UfQdcSaYfDlmO6E3erdcPzyh94qrKHv4UUL/Iw3Zs72FGElYhdirEY4V4Cod+8aAFnAACy4Vu54NRm5HrgNiiC83htVxggiBe2ew6Xq7Zduio0oaYI1MlOboDSza12jh0q7opew8b6VVVDXcYEW5/Z6f/tKea/JhTwEb0WB50Bm8EUW96y2jQTEG6FwZ7ZqI1a+K0uRw4a6jwWjtmIJXbXRREKGaDi5bsWLpdr4agr1rXJi9r46Gp2UIY0FOF3kJd1dXgkxeSXy1RZ+2VfUKTpw8xWdbV6CRMLfKSGAgR4yzwoYnL1e0aEe6nCeInnHIcUPmK6dw6uO2figp8VLrNWa9ypnTS0D6TsIw1N1FUh2P3h8cgH63kKv5eZi9VsyfvXI3D+o9UGFqamQLDbYKI/4MTEqKwZY3kH0OyW+NSg3XqVTBRjjgOFW/aDXv4mdia+IyR27n8BGjUV86G63uDnhWFNBYM+HVHr4wmY80iF6VRluN90BS7v4UYYgtCVETSEf7zR8Yjhw==";
+    </script>
+    
+    <script id="html_notice_dialog_script" src="https://www.genspark.ai/notice_dialog.js"></script>
+    
