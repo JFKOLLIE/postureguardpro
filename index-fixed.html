@@ -1,0 +1,1279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PostureGuard Pro - Fix Your Hunched Back in 21 Days</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <script src="https://js.stripe.com/v3/"></script>
+    <style>
+        .hero-gradient {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .pulse-animation {
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: .5;
+            }
+        }
+        
+        .benefit-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .benefit-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .gallery-image {
+            transition: transform 0.3s ease;
+        }
+        
+        .gallery-image:hover {
+            transform: scale(1.05);
+        }
+        
+        .testimonial-card {
+            background: linear-gradient(145deg, #ffffff, #f3f4f6);
+            border: 1px solid rgba(229, 231, 235, 0.5);
+        }
+        
+        .order-status-completed {
+            background-color: #dcfce7;
+            color: #166534;
+        }
+        
+        .order-status-pending {
+            background-color: #fef3c7;
+            color: #92400e;
+        }
+        
+        .order-status-cancelled {
+            background-color: #fee2e2;
+            color: #991b1b;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Hero Section -->
+    <section class="hero-gradient text-white py-20 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto text-center">
+            <div class="mb-8">
+                <h1 class="text-4xl sm:text-6xl font-bold mb-6 leading-tight">
+                    Fix Your Hunched Back<br>
+                    <span class="text-yellow-300">in 21 Days</span>
+                </h1>
+                <p class="text-xl sm:text-2xl mb-8 opacity-90 max-w-3xl mx-auto leading-relaxed">
+                    The smart device that trains your body to maintain perfect posture naturally - no apps, no straps, no complications!
+                </p>
+            </div>
+            
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-6 mb-12">
+                <div class="text-center">
+                    <div class="text-5xl sm:text-7xl font-bold text-yellow-300">$29.99</div>
+                    <div class="text-2xl line-through opacity-60">$49.99</div>
+                    <div class="text-xl font-semibold text-green-300">Save $20 Today!</div>
+                </div>
+            </div>
+            
+            <div class="flex flex-wrap justify-center gap-6 mb-12">
+                <div class="flex items-center gap-2 bg-white bg-opacity-20 px-4 py-2 rounded-full">
+                    <i class="fas fa-shipping-fast text-green-300"></i>
+                    <span class="font-medium">Free Shipping</span>
+                </div>
+                <div class="flex items-center gap-2 bg-white bg-opacity-20 px-4 py-2 rounded-full">
+                    <i class="fas fa-shield-alt text-green-300"></i>
+                    <span class="font-medium">30-Day Guarantee</span>
+                </div>
+                <div class="flex items-center gap-2 bg-white bg-opacity-20 px-4 py-2 rounded-full">
+                    <i class="fas fa-star text-yellow-300"></i>
+                    <span class="font-medium">4.8/5 Rating</span>
+                </div>
+            </div>
+            
+            <button onclick="buyNow()" class="bg-yellow-400 hover:bg-yellow-300 text-gray-900 font-bold py-4 px-12 rounded-full text-xl transition duration-300 transform hover:scale-105 pulse-animation">
+                Order Now - $29.99
+            </button>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-6">Does Your Back Ache Every Single Day?</h2>
+                <p class="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+                    You're not alone. 86% of office workers suffer from posture-related pain. Every hour you sit hunched over, your spine curves a little more... your shoulders round forward... your confidence shrinks.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+                <div class="text-center benefit-card bg-red-50 p-8 rounded-2xl">
+                    <div class="text-5xl mb-4">😣</div>
+                    <h3 class="text-2xl font-bold text-red-700 mb-4">Chronic Back Pain</h3>
+                    <p class="text-gray-600">Constant aching and stiffness from poor posture habits</p>
+                </div>
+                
+                <div class="text-center benefit-card bg-blue-50 p-8 rounded-2xl">
+                    <div class="text-5xl mb-4">😔</div>
+                    <h3 class="text-2xl font-bold text-blue-700 mb-4">Low Confidence</h3>
+                    <p class="text-gray-600">Slouching makes you look and feel less confident</p>
+                </div>
+                
+                <div class="text-center benefit-card bg-yellow-50 p-8 rounded-2xl">
+                    <div class="text-5xl mb-4">😴</div>
+                    <h3 class="text-2xl font-bold text-yellow-700 mb-4">Constant Fatigue</h3>
+                    <p class="text-gray-600">Poor posture restricts breathing and energy flow</p>
+                </div>
+            </div>
+            
+            <div class="text-center">
+                <img src="https://i5.walmartimages.com/asr/e316a988-3634-408f-812a-638e039d7891.fcb334bba75aa516b1fc63d00b9208f6.jpeg" alt="PostureGuard Pro Smart Posture Corrector" class="mx-auto rounded-2xl shadow-2xl max-w-md w-full">
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-6">Meet PostureGuard Pro - Your Invisible Posture Coach</h2>
+                <p class="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+                    This revolutionary neck-worn device uses intelligent sensors to detect when you start to slouch. The moment you lean forward, it sends a gentle vibration reminder - training your body to maintain perfect posture automatically.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="text-center benefit-card bg-white p-8 rounded-2xl shadow-lg">
+                    <div class="text-4xl mb-4">📳</div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Smart Vibration Reminders</h3>
+                    <p class="text-gray-600">Gentle, not annoying - trains your muscle memory</p>
+                </div>
+                
+                <div class="text-center benefit-card bg-white p-8 rounded-2xl shadow-lg">
+                    <div class="text-4xl mb-4">👔</div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Invisible Under Clothes</h3>
+                    <p class="text-gray-600">Professional appearance maintained at work</p>
+                </div>
+                
+                <div class="text-center benefit-card bg-white p-8 rounded-2xl shadow-lg">
+                    <div class="text-4xl mb-4">🔋</div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">7-Day Battery Life</h3>
+                    <p class="text-gray-600">Set it and forget it - USB rechargeable</p>
+                </div>
+                
+                <div class="text-center benefit-card bg-white p-8 rounded-2xl shadow-lg">
+                    <div class="text-4xl mb-4">⚡</div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">No Apps or Setup</h3>
+                    <p class="text-gray-600">Works immediately - no complicated installation</p>
+                </div>
+            </div>
+            
+            <div class="text-center mt-16">
+                <img src="https://i5.walmartimages.com/asr/f1a8344f-7433-4edb-b25d-452229ff4fbf.29c5a37571ca17d2847c1c798a330d36.jpeg" alt="PostureGuard Pro Features" class="mx-auto rounded-2xl shadow-2xl max-w-2xl w-full">
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-6">How It Works - Simple 3-Step Process</h2>
+                <p class="text-xl text-gray-600">Get perfect posture in just 3 easy steps</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                <div class="text-center">
+                    <div class="bg-blue-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <span class="text-3xl font-bold text-blue-600">1</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Wear Around Your Neck</h3>
+                    <p class="text-gray-600 mb-6">Simply place PostureGuard Pro around your neck - comfortable and invisible under clothes</p>
+                    <img src="https://i5.walmartimages.com/asr/95f0e752-3049-4696-a628-8acb7e8afdb9.27321c11acc4bd892bb72f440be5130a.jpeg" alt="Step 1" class="mx-auto rounded-2xl shadow-lg max-w-xs w-full gallery-image">
+                </div>
+                
+                <div class="text-center">
+                    <div class="bg-green-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <span class="text-3xl font-bold text-green-600">2</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Power On & Adjust</h3>
+                    <p class="text-gray-600 mb-6">Press the power button and adjust sensitivity to your comfort level</p>
+                    <img src="https://i5.walmartimages.com/asr/6961cd86-ff98-4b1d-96f0-9c9ca92ea2ee.4579affaadeaf06001590181339432a9.jpeg" alt="Step 2" class="mx-auto rounded-2xl shadow-lg max-w-xs w-full gallery-image">
+                </div>
+                
+                <div class="text-center">
+                    <div class="bg-purple-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <span class="text-3xl font-bold text-purple-600">3</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Train Your Posture</h3>
+                    <p class="text-gray-600 mb-6">Get gentle vibration reminders when you slouch - builds perfect posture habits naturally</p>
+                    <img src="https://i5.walmartimages.com/asr/32b8a404-c2aa-4ecd-beb2-9986d14d0643.cec840e063cf12c7b9d48c061e568a69.jpeg" alt="Step 3" class="mx-auto rounded-2xl shadow-lg max-w-xs w-full gallery-image">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Gallery Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-6">Product Gallery</h2>
+                <p class="text-xl text-gray-600">See PostureGuard Pro from every angle</p>
+            </div>
+
+            <!-- Demo Video Section -->
+            <div class="mb-16">
+                <div class="text-center mb-8">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Watch Demo Video</h3>
+                    <p class="text-gray-600">See how PostureGuard Pro works in real life</p>
+                </div>
+                <div class="max-w-4xl mx-auto">
+                    <div class="bg-gray-100 rounded-lg overflow-hidden shadow-xl">
+                        <video controls playsinline webkit-playsinline muted autoplay loop class="w-full" style="max-height: 600px; border-radius: 12px;">
+                            <source src="./postureguard-demo.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Photo Gallery -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-2xl shadow-lg">
+                    <img src="https://i5.walmartimages.com/asr/e316a988-3634-408f-812a-638e039d7891.fcb334bba75aa516b1fc63d00b9208f6.jpeg" alt="PostureGuard Pro Main View" class="w-full rounded-xl mb-4 gallery-image">
+                    <h4 class="font-semibold text-gray-900">Main View</h4>
+                </div>
+                
+                <div class="bg-white p-6 rounded-2xl shadow-lg">
+                    <img src="https://i5.walmartimages.com/asr/f1a8344f-7433-4edb-b25d-452229ff4fbf.29c5a37571ca17d2847c1c798a330d36.jpeg" alt="PostureGuard Pro In Use" class="w-full rounded-xl mb-4 gallery-image">
+                    <h4 class="font-semibold text-gray-900">In Use</h4>
+                </div>
+                
+                <div class="bg-white p-6 rounded-2xl shadow-lg">
+                    <img src="https://i5.walmartimages.com/asr/6961cd86-ff98-4b1d-96f0-9c9ca92ea2ee.4579affaadeaf06001590181339432a9.jpeg" alt="PostureGuard Pro Digital Display" class="w-full rounded-xl mb-4 gallery-image">
+                    <h4 class="font-semibold text-gray-900">Digital Display</h4>
+                </div>
+                
+                <div class="bg-white p-6 rounded-2xl shadow-lg">
+                    <img src="https://i5.walmartimages.com/asr/32b8a404-c2aa-4ecd-beb2-9986d14d0643.cec840e063cf12c7b9d48c061e568a69.jpeg" alt="PostureGuard Pro Orange Version" class="w-full rounded-xl mb-4 gallery-image">
+                    <h4 class="font-semibold text-gray-900">Orange Version</h4>
+                </div>
+                
+                <div class="bg-white p-6 rounded-2xl shadow-lg">
+                    <img src="https://i5.walmartimages.com/asr/95f0e752-3049-4696-a628-8acb7e8afdb9.27321c11acc4bd892bb72f440be5130a.jpeg" alt="PostureGuard Pro Lifestyle" class="w-full rounded-xl mb-4 gallery-image">
+                    <h4 class="font-semibold text-gray-900">Lifestyle</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Before/After Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-6">Amazing Transformation Results</h2>
+                <p class="text-xl text-gray-600">See the dramatic difference PostureGuard Pro makes</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div class="bg-red-50 p-8 rounded-2xl">
+                    <h3 class="text-2xl font-bold text-red-700 mb-6">BEFORE: Poor Posture</h3>
+                    <ul class="space-y-3 text-gray-600">
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-times text-red-500"></i>
+                            <span>Hunched shoulders</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-times text-red-500"></i>
+                            <span>Forward head position</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-times text-red-500"></i>
+                            <span>Chronic back pain</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-times text-red-500"></i>
+                            <span>Low confidence</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-times text-red-500"></i>
+                            <span>Restricted breathing</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="bg-green-50 p-8 rounded-2xl">
+                    <h3 class="text-2xl font-bold text-green-700 mb-6">AFTER: Perfect Posture</h3>
+                    <ul class="space-y-3 text-gray-600">
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-check text-green-500"></i>
+                            <span>Straight, aligned spine</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-check text-green-500"></i>
+                            <span>Shoulders back & down</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-check text-green-500"></i>
+                            <span>Pain-free movement</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-check text-green-500"></i>
+                            <span>Confident appearance</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-check text-green-500"></i>
+                            <span>Better breathing & energy</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-6">What Our Customers Say</h2>
+                <p class="text-xl text-gray-600">4.8/5 based on 12,847+ reviews</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="testimonial-card p-8 rounded-2xl shadow-lg">
+                    <div class="flex items-center mb-6">
+                        <div class="w-16 h-16 bg-purple-500 rounded-full flex items-center justify-center text-white text-2xl font-bold mr-4">
+                            S
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-900">Sarah M.</h4>
+                            <p class="text-gray-600">Marketing Manager</p>
+                        </div>
+                    </div>
+                    <div class="flex mb-4">
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </div>
+                    <p class="text-gray-600 italic">"I went from chronic neck pain to confident posture in just 3 weeks! The gentle reminders trained my body without being annoying. Best $30 I ever spent!"</p>
+                </div>
+                
+                <div class="testimonial-card p-8 rounded-2xl shadow-lg">
+                    <div class="flex items-center mb-6">
+                        <div class="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center text-white text-2xl font-bold mr-4">
+                            M
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-900">Mike T.</h4>
+                            <p class="text-gray-600">Software Developer</p>
+                        </div>
+                    </div>
+                    <div class="flex mb-4">
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </div>
+                    <p class="text-gray-600 italic">"My dating life improved when I stopped looking hunched over! PostureGuard Pro is invisible under my shirts and the confidence boost is incredible."</p>
+                </div>
+                
+                <div class="testimonial-card p-8 rounded-2xl shadow-lg">
+                    <div class="flex items-center mb-6">
+                        <div class="w-16 h-16 bg-pink-500 rounded-full flex items-center justify-center text-white text-2xl font-bold mr-4">
+                            J
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-900">Jennifer L.</h4>
+                            <p class="text-gray-600">Nurse</p>
+                        </div>
+                    </div>
+                    <div class="flex mb-4">
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </div>
+                    <p class="text-gray-600 italic">"Saved me $2,000 in chiropractor bills! After years of back pain from desk work, PostureGuard Pro fixed my posture naturally. Amazing little device!"</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-6">Frequently Asked Questions</h2>
+                <p class="text-xl text-gray-600">Everything you need to know about PostureGuard Pro</p>
+            </div>
+            
+            <div class="max-w-4xl mx-auto space-y-8">
+                <div class="bg-gray-50 p-8 rounded-2xl">
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">How long should I wear PostureGuard Pro each day?</h3>
+                    <p class="text-gray-600">Start with 2-3 hours daily for the first week, then gradually increase to 6-8 hours as your body adapts. Most users see significant improvement within 21 days.</p>
+                </div>
+                
+                <div class="bg-gray-50 p-8 rounded-2xl">
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Is it comfortable to wear?</h3>
+                    <p class="text-gray-600">Yes! PostureGuard Pro weighs only 60 grams and is made from soft, food-grade silicone. Most users forget they're wearing it after the first few days.</p>
+                </div>
+                
+                <div class="bg-gray-50 p-8 rounded-2xl">
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Will it work for severe posture problems?</h3>
+                    <p class="text-gray-600">PostureGuard Pro helps with mild to moderate posture issues. For severe spinal conditions, we recommend consulting your healthcare provider first.</p>
+                </div>
+                
+                <div class="bg-gray-50 p-8 rounded-2xl">
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">How long does the battery last?</h3>
+                    <p class="text-gray-600">The rechargeable battery lasts 7 days with normal use. It charges fully in 2 hours via the included USB-C cable.</p>
+                </div>
+                
+                <div class="bg-gray-50 p-8 rounded-2xl">
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Is it waterproof?</h3>
+                    <p class="text-gray-600">PostureGuard Pro is water-resistant for daily activities but should be removed before swimming or showering.</p>
+                </div>
+            </div>
+            
+            <div class="bg-yellow-50 border-l-4 border-yellow-400 p-8 mt-16 rounded-r-2xl">
+                <h3 class="text-lg font-bold text-yellow-800 mb-2">Medical Disclaimer</h3>
+                <p class="text-yellow-700">PostureGuard Pro is not a medical device and is not intended to diagnose, treat, cure, or prevent any disease or medical condition. Results may vary between individuals. If you have any existing medical conditions, especially spine, neck, or muscle disorders, please consult your healthcare provider before using this device. This product is intended for healthy adults and should not be used by children under 16 or pregnant women without medical supervision.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Contact Us</h2>
+                <p class="text-xl text-gray-600">Have questions? We're here to help!</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div>
+                    <div class="bg-white p-8 rounded-2xl shadow-lg mb-8">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-6">Get in Touch</h3>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-center gap-4">
+                                <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-envelope text-blue-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-900">Email</h4>
+                                    <p class="text-gray-600"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="d2a1a7a2a2bda0a692a2bda1a6a7a0b7b5a7b3a0b6a2a0bdfcb1bdbf">[email&#160;protected]</a></p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center gap-4">
+                                <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-map-marker-alt text-green-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-900">Address</h4>
+                                    <p class="text-gray-600">11468 Marketplace Drive N<br>Ste 600-1014<br>Champlin MN 55316</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-8 rounded-2xl shadow-lg">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-6">Send us a Message</h3>
+                    <form onsubmit="submitContact(event)" class="space-y-6">
+                        <div>
+                            <label class="block text-gray-700 font-medium mb-2">Name</label>
+                            <input type="text" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                        
+                        <div>
+                            <label class="block text-gray-700 font-medium mb-2">Email</label>
+                            <input type="email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                        
+                        <div>
+                            <label class="block text-gray-700 font-medium mb-2">Message</label>
+                            <textarea required rows="5" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="w-full bg-blue-600 text-white py-3 px-6 rounded-lg hover:bg-blue-700 transition duration-300">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="py-20 hero-gradient text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-4xl font-bold mb-6">Ready to Transform Your Posture?</h2>
+            <p class="text-xl mb-8 opacity-90">Join thousands who've already fixed their hunched back with PostureGuard Pro</p>
+            
+            <div class="bg-white bg-opacity-20 rounded-2xl p-8 max-w-md mx-auto mb-8">
+                <div class="text-5xl font-bold text-yellow-300 mb-2">$29.99</div>
+                <div class="text-2xl line-through opacity-60 mb-2">$49.99</div>
+                <div class="text-xl font-semibold text-green-300 mb-6">Save $20 Today!</div>
+                
+                <ul class="space-y-2 text-left">
+                    <li class="flex items-center gap-3">
+                        <i class="fas fa-check text-green-300"></i>
+                        <span>Free worldwide shipping</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <i class="fas fa-check text-green-300"></i>
+                        <span>30-day money-back guarantee</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <i class="fas fa-check text-green-300"></i>
+                        <span>7-day battery life</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <i class="fas fa-check text-green-300"></i>
+                        <span>Invisible under clothes</span>
+                    </li>
+                </ul>
+            </div>
+            
+            <button onclick="buyNow()" class="bg-yellow-400 hover:bg-yellow-300 text-gray-900 font-bold py-4 px-12 rounded-full text-xl transition duration-300 transform hover:scale-105 pulse-animation mb-4">
+                Order Now - $29.99
+            </button>
+            
+            <p class="text-sm opacity-75">Delivered in 7-10 business days | SSL Secured Checkout</p>
+        </div>
+    </section>
+
+    <!-- Footer with Policy Links -->
+    <footer class="bg-gray-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- Company Info -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">PostureGuard Pro</h3>
+                    <p class="text-gray-400 text-sm mb-4">Transform your posture in 21 days with smart vibration technology.</p>
+                    <div class="text-sm text-gray-400">
+                        <p>11468 Marketplace Drive N</p>
+                        <p>Ste 600-1014</p>
+                        <p>Champlin MN 55316</p>
+                    </div>
+                </div>
+                
+                <!-- Customer Service -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Customer Service</h3>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="/cdn-cgi/l/email-protection#1665636666796462566679656263647371637764726664793875797b" class="hover:text-white">Contact Support</a></li>
+                        <li><a href="#faq" class="hover:text-white">FAQ</a></li>
+                        <li><a href="javascript:void(0)" onclick="openTrackingModal()" class="hover:text-white">Track Order</a></li>
+                        <li><a href="javascript:void(0)" onclick="openReturnsModal()" class="hover:text-white">Returns</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Legal -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Legal</h3>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="javascript:void(0)" onclick="openPolicyModal('terms')" class="hover:text-white">Terms of Service</a></li>
+                        <li><a href="javascript:void(0)" onclick="openPolicyModal('privacy')" class="hover:text-white">Privacy Policy</a></li>
+                        <li><a href="javascript:void(0)" onclick="openPolicyModal('refund')" class="hover:text-white">Refund Policy</a></li>
+                        <li><a href="javascript:void(0)" onclick="openPolicyModal('shipping')" class="hover:text-white">Shipping Policy</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Company -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Company</h3>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="javascript:void(0)" onclick="openPolicyModal('about')" class="hover:text-white">About Us</a></li>
+                        <li><a href="#testimonials" class="hover:text-white">Reviews</a></li>
+                        <li><a href="#contact" class="hover:text-white">Contact</a></li>
+                        <li><a href="javascript:void(0)" onclick="openAdminLogin()" class="hover:text-gray-300 opacity-50">•</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Bottom Footer -->
+            <div class="border-t border-gray-800 mt-8 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-sm text-gray-400">© 2024 PostureGuard Pro. All rights reserved.</p>
+                    <div class="flex space-x-4 mt-4 md:mt-0">
+                        <span class="text-sm text-gray-400">Secure SSL Checkout</span>
+                        <span class="text-sm text-gray-400">30-Day Guarantee</span>
+                        <span class="text-sm text-gray-400">Free Shipping</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Payment Modal -->
+    <div id="paymentModal" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50">
+        <div class="flex items-center justify-center min-h-screen p-4">
+            <div class="bg-white rounded-lg p-8 max-w-md w-full">
+                <div class="flex justify-between items-center mb-6">
+                    <h2 class="text-2xl font-bold text-gray-900">Complete Your Order</h2>
+                    <button onclick="closePayment()" class="text-gray-400 hover:text-gray-600">
+                        <i class="fas fa-times text-2xl"></i>
+                    </button>
+                </div>
+                
+                <div class="mb-6 p-4 bg-gray-50 rounded-lg">
+                    <div class="flex justify-between items-center">
+                        <span class="font-medium">PostureGuard Pro</span>
+                        <span class="font-bold text-2xl">$29.99</span>
+                    </div>
+                    <p class="text-sm text-gray-600 mt-1">Free shipping • 30-day guarantee</p>
+                </div>
+                
+                <form id="payment-form">
+                    <div class="mb-4">
+                        <label class="block text-gray-700 text-sm font-medium mb-2">Card Information</label>
+                        <div id="card-element" class="p-3 border border-gray-300 rounded-lg">
+                            <!-- Stripe Elements will create form elements here -->
+                        </div>
+                        <div id="card-errors" class="mt-2 text-red-600 text-sm hidden"></div>
+                    </div>
+                    
+                    <button type="submit" class="w-full bg-blue-600 text-white py-3 px-4 rounded-lg hover:bg-blue-700 transition duration-200">
+                        Complete Order - $29.99
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Admin Login Modal -->
+    <div id="adminLoginModal" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50">
+        <div class="flex items-center justify-center min-h-screen p-4">
+            <div class="bg-white rounded-lg p-8 max-w-md w-full">
+                <div class="flex justify-between items-center mb-6">
+                    <h2 class="text-2xl font-bold text-gray-900">Admin Login</h2>
+                    <button onclick="closeAdminLogin()" class="text-gray-400 hover:text-gray-600">
+                        <i class="fas fa-times text-2xl"></i>
+                    </button>
+                </div>
+                <form onsubmit="adminLogin(event)">
+                    <div class="mb-4">
+                        <label class="block text-gray-700 text-sm font-medium mb-2">Email</label>
+                        <input type="email" id="adminEmail" required 
+                               class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    </div>
+                    <div class="mb-6">
+                        <label class="block text-gray-700 text-sm font-medium mb-2">Password</label>
+                        <input type="password" id="adminPassword" required 
+                               class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    </div>
+                    <button type="submit" 
+                            class="w-full bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition duration-200">
+                        Login
+                    </button>
+                </form>
+                <div id="loginError" class="mt-4 text-red-600 text-sm hidden"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Admin Dashboard Modal -->
+    <div id="adminDashboard" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50">
+        <div class="flex items-center justify-center min-h-screen p-4">
+            <div class="bg-white rounded-lg p-8 max-w-6xl w-full max-h-screen overflow-y-auto">
+                <div class="flex justify-between items-center mb-6">
+                    <h2 class="text-2xl font-bold text-gray-900">Admin Dashboard</h2>
+                    <div>
+                        <button onclick="exportOrders()" class="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 mr-2">
+                            Export CSV
+                        </button>
+                        <button onclick="closeAdminDashboard()" class="text-gray-400 hover:text-gray-600">
+                            <i class="fas fa-times text-2xl"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Dashboard Stats -->
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+                    <div class="bg-blue-50 p-4 rounded-lg">
+                        <h3 class="text-lg font-semibold text-blue-800">Total Orders</h3>
+                        <p class="text-2xl font-bold text-blue-600" id="totalOrders">0</p>
+                    </div>
+                    <div class="bg-green-50 p-4 rounded-lg">
+                        <h3 class="text-lg font-semibold text-green-800">Total Revenue</h3>
+                        <p class="text-2xl font-bold text-green-600" id="totalRevenue">$0.00</p>
+                    </div>
+                    <div class="bg-yellow-50 p-4 rounded-lg">
+                        <h3 class="text-lg font-semibold text-yellow-800">Pending Orders</h3>
+                        <p class="text-2xl font-bold text-yellow-600" id="pendingOrders">0</p>
+                    </div>
+                    <div class="bg-purple-50 p-4 rounded-lg">
+                        <h3 class="text-lg font-semibold text-purple-800">Completed Orders</h3>
+                        <p class="text-2xl font-bold text-purple-600" id="completedOrders">0</p>
+                    </div>
+                </div>
+
+                <!-- Orders Table -->
+                <div class="bg-white rounded-lg shadow overflow-hidden">
+                    <div class="px-6 py-4 border-b border-gray-200">
+                        <h3 class="text-lg font-medium text-gray-900">Recent Orders</h3>
+                    </div>
+                    <div class="overflow-x-auto">
+                        <table class="min-w-full divide-y divide-gray-200">
+                            <thead class="bg-gray-50">
+                                <tr>
+                                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Order ID</th>
+                                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Customer</th>
+                                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Email</th>
+                                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Total</th>
+                                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
+                                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Date</th>
+                                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="ordersTableBody" class="bg-white divide-y divide-gray-200">
+                                <!-- Orders will be populated here -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Policy Modal -->
+    <div id="policyModal" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50">
+        <div class="flex items-center justify-center min-h-screen p-4">
+            <div class="bg-white rounded-lg p-8 max-w-4xl w-full max-h-screen overflow-y-auto">
+                <div class="flex justify-between items-center mb-6">
+                    <h2 id="policyTitle" class="text-2xl font-bold text-gray-900"></h2>
+                    <button onclick="closePolicyModal()" class="text-gray-400 hover:text-gray-600">
+                        <i class="fas fa-times text-2xl"></i>
+                    </button>
+                </div>
+                <div id="policyContent" class="prose max-w-none text-gray-700">
+                    <!-- Policy content will be loaded here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+        // Initialize Stripe
+        const stripe = Stripe('pk_test_your_stripe_key_here');
+        const elements = stripe.elements();
+
+        // Admin credentials
+        const ADMIN_CREDENTIALS = {
+            email: 'support@postureguardpro.com',
+            password: 'Posture2025'
+        };
+
+        // Sample orders data
+        let ordersData = [
+            {
+                id: 'PG001',
+                customer: 'John Smith',
+                email: 'john@example.com',
+                total: 29.99,
+                status: 'Completed',
+                date: '2024-08-25'
+            },
+            {
+                id: 'PG002',
+                customer: 'Sarah Johnson',
+                email: 'sarah@example.com',
+                total: 29.99,
+                status: 'Pending',
+                date: '2024-08-25'
+            }
+        ];
+
+        // Policy content
+        const policyContent = {
+            terms: {
+                title: 'Terms of Service',
+                content: `
+                    <div class="space-y-4">
+                        <h3 class="text-xl font-semibold text-gray-900">1. Agreement to Terms</h3>
+                        <p>By purchasing PostureGuard Pro, you agree to these terms and conditions. Please read them carefully before making a purchase.</p>
+                        
+                        <h3 class="text-xl font-semibold text-gray-900">2. Product Description</h3>
+                        <p>PostureGuard Pro is a posture correction device designed to help improve posture through gentle vibration reminders. It is not a medical device and should not be used as a substitute for professional medical advice.</p>
+                        
+                        <h3 class="text-xl font-semibold text-gray-900">3. Use of Product</h3>
+                        <p>This product is intended for healthy adults aged 18 and above. Consult your healthcare provider before use if you have any medical conditions affecting your neck, spine, or nervous system.</p>
+                        
+                        <h3 class="text-xl font-semibold text-gray-900">4. Warranty</h3>
+                        <p>We provide a 1-year limited warranty against manufacturing defects. This warranty does not cover damage from misuse, accidents, or normal wear and tear.</p>
+                        
+                        <h3 class="text-xl font-semibold text-gray-900">5. Limitation of Liability</h3>
+                        <p>PostureGuard Pro is not liable for any indirect, incidental, or consequential damages arising from product use. Our liability is limited to the purchase price of the product.</p>
+                        
+                        <h3 class="text-xl font-semibold text-gray-900">6. Governing Law</h3>
+                        <p>These terms are governed by the laws of Minnesota, United States. Any disputes will be resolved in the courts of Minnesota.</p>
+                    </div>
+                `
+            },
+            privacy: {
+                title: 'Privacy Policy',
+                content: `
+                    <div class="space-y-4">
+                        <h3 class="text-xl font-semibold text-gray-900">Information We Collect</h3>
+                        <p>We collect the following information when you make a purchase:</p>
+                        <ul class="list-disc pl-6 space-y-1">
+                            <li>Name and contact information</li>
+                            <li>Billing and shipping addresses</li>
+                            <li>Payment information (processed securely through Stripe)</li>
+                            <li>Order history and preferences</li>
+                        </ul>
+                        
+                        <h3 class="text-xl font-semibold text-gray-900">How We Use Your Information</h3>
+                        <ul class="list-disc pl-6 space-y-1">
+                            <li>Process and fulfill your orders</li>
+                            <li>Provide customer support</li>
+                            <li>Send order confirmations and shipping updates</li>
+                            <li>Improve our products and services</li>
+                        </ul>
+                        
+                        <h3 class="text-xl font-semibold text-gray-900">Information Sharing</h3>
+                        <p>We do not sell, trade, or share your personal information with third parties except:</p>
+                        <ul class="list-disc pl-6 space-y-1">
+                            <li>To fulfill your orders (shipping companies, payment processors)</li>
+                            <li>When required by law</li>
+                            <li>To protect our rights and safety</li>
+                        </ul>
+                        
+                        <h3 class="text-xl font-semibold text-gray-900">Data Security</h3>
+                        <p>We use industry-standard security measures including SSL encryption to protect your personal information. Payment data is processed securely through Stripe and never stored on our servers.</p>
+                        
+                        <h3 class="text-xl font-semibold text-gray-900">Contact Us</h3>
+                        <p>For privacy questions or to request data deletion, contact us at <strong>support@postureguardpro.com</strong></p>
+                    </div>
+                `
+            },
+            refund: {
+                title: 'Refund Policy',
+                content: `
+                    <div class="space-y-4">
+                        <h3 class="text-xl font-semibold text-gray-900">30-Day Money-Back Guarantee</h3>
+                        <p>We stand behind our product with a <strong>30-day money-back guarantee</strong>. If you're not completely satisfied with your PostureGuard Pro, you can return it for a full refund.</p>
+                        
+                        <h3 class="text-xl font-semibold text-gray-900">How to Request a Refund</h3>
+                        <ol class="list-decimal pl-6 space-y-2">
+                            <li>Email us at <strong>support@postureguardpro.com</strong> within 30 days of delivery</li>
+                            <li>Include your order number and reason for return</li>
+                            <li>We'll send you a prepaid return shipping label within 24 hours</li>
+                            <li>Pack the item in its original packaging with all accessories</li>
+                            <li>Ship it back using the provided label</li>
+                        </ol>
+                        
+                        <h3 class="text-xl font-semibold text-gray-900">Refund Timeline</h3>
+                        <ul class="list-disc pl-6 space-y-1">
+                            <li><strong>Processing:</strong> 1-2 business days after we receive your return</li>
+                            <li><strong>Bank/Card refunds:</strong> 5-7 business days</li>
+                            <li><strong>PayPal refunds:</strong> 3-5 business days</li>
+                        </ul>
+                        
+                        <h3 class="text-xl font-semibold text-gray-900">Return Conditions</h3>
+                        <ul class="list-disc pl-6 space-y-1">
+                            <li>Item must be in original condition</li>
+                            <li>All accessories and packaging must be included</li>
+                            <li>No damage from misuse or normal wear</li>
+                            <li>Must be returned within 30 days of delivery</li>
+                        </ul>
+                        
+                        <h3 class="text-xl font-semibold text-gray-900">Questions?</h3>
+                        <p>Contact our support team at <strong>support@postureguardpro.com</strong> - we're here to help!</p>
+                    </div>
+                `
+            },
+            shipping: {
+                title: 'Shipping Policy',
+                content: `
+                    <div class="space-y-4">
+                        <h3 class="text-xl font-semibold text-gray-900">Free Worldwide Shipping</h3>
+                        <p>We offer <strong>100% FREE shipping</strong> on all PostureGuard Pro orders, no minimum purchase required!</p>
+                        
+                        <h3 class="text-xl font-semibold text-gray-900">Processing Time</h3>
+                        <ul class="list-disc pl-6 space-y-1">
+                            <li><strong>Order processing:</strong> 1-2 business days</li>
+                            <li><strong>Quality check:</strong> Every item is inspected before shipping</li>
+                            <li><strong>Packaging:</strong> Secure packaging to prevent damage</li>
+                        </ul>
+                        
+                        <h3 class="text-xl font-semibold text-gray-900">Delivery Times</h3>
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <ul class="list-disc pl-6 space-y-1">
+                                <li><strong>United States:</strong> 7-12 business days</li>
+                                <li><strong>Canada:</strong> 10-15 business days</li>
+                                <li><strong>Europe:</strong> 10-16 business days</li>
+                                <li><strong>Australia/NZ:</strong> 12-18 business days</li>
+                                <li><strong>Rest of World:</strong> 15-25 business days</li>
+                            </ul>
+                        </div>
+                        
+                        <h3 class="text-xl font-semibold text-gray-900">Order Tracking</h3>
+                        <p>You'll receive a <strong>tracking number via email</strong> within 24-48 hours after your order ships. Track your package in real-time!</p>
+                        
+                        <h3 class="text-xl font-semibold text-gray-900">Shipping Protection</h3>
+                        <ul class="list-disc pl-6 space-y-1">
+                            <li>All packages are fully insured</li>
+                            <li>Secure packaging prevents damage</li>
+                            <li>If your package is lost or damaged, we'll send a replacement free of charge</li>
+                        </ul>
+                        
+                        <h3 class="text-xl font-semibold text-gray-900">Shipping Issues?</h3>
+                        <p>Contact us immediately at <strong>support@postureguardpro.com</strong> if you experience any shipping problems. We'll resolve it quickly!</p>
+                    </div>
+                `
+            },
+            about: {
+                title: 'About PostureGuard Pro',
+                content: `
+                    <div class="space-y-4">
+                        <h3 class="text-xl font-semibold text-gray-900">Our Mission</h3>
+                        <p>To help millions of people improve their posture, confidence, and quality of life through innovative, easy-to-use technology.</p>
+                        
+                        <h3 class="text-xl font-semibold text-gray-900">The Problem We Solve</h3>
+                        <p>Over <strong>86% of office workers</strong> suffer from posture-related pain. Poor posture leads to:</p>
+                        <ul class="list-disc pl-6 space-y-1">
+                            <li>Chronic back and neck pain</li>
+                            <li>Reduced confidence and energy</li>
+                            <li>Breathing difficulties</li>
+                            <li>Long-term spinal problems</li>
+                        </ul>
+                        
+                        <h3 class="text-xl font-semibold text-gray-900">Our Solution</h3>
+                        <p>PostureGuard Pro uses smart sensor technology to gently remind you when you slouch, training your body to maintain perfect posture naturally - without apps, straps, or complexity.</p>
+                        
+                        <h3 class="text-xl font-semibold text-gray-900">Why Choose Us?</h3>
+                        <ul class="list-disc pl-6 space-y-1">
+                            <li><strong>Proven Results:</strong> Over 50,000 satisfied customers</li>
+                            <li><strong>30-Day Guarantee:</strong> Risk-free trial period</li>
+                            <li><strong>Expert Support:</strong> Responsive customer service team</li>
+                            <li><strong>Quality Promise:</strong> Premium materials and construction</li>
+                        </ul>
+                        
+                        <h3 class="text-xl font-semibold text-gray-900">Contact Information</h3>
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <p><strong>Email:</strong> support@postureguardpro.com</p>
+                            <p><strong>Address:</strong><br>
+                            11468 Marketplace Drive N<br>
+                            Ste 600-1014<br>
+                            Champlin, MN 55316<br>
+                            United States</p>
+                        </div>
+                    </div>
+                `
+            }
+        };
+
+        // Admin Functions
+        function openAdminLogin() {
+            document.getElementById('adminLoginModal').classList.remove('hidden');
+        }
+
+        function closeAdminLogin() {
+            document.getElementById('adminLoginModal').classList.add('hidden');
+            document.getElementById('loginError').classList.add('hidden');
+            document.getElementById('adminEmail').value = '';
+            document.getElementById('adminPassword').value = '';
+        }
+
+        function closeAdminDashboard() {
+            document.getElementById('adminDashboard').classList.add('hidden');
+        }
+
+        function adminLogin(event) {
+            event.preventDefault();
+            
+            const email = document.getElementById('adminEmail').value;
+            const password = document.getElementById('adminPassword').value;
+            const errorDiv = document.getElementById('loginError');
+            
+            if (email === ADMIN_CREDENTIALS.email && password === ADMIN_CREDENTIALS.password) {
+                closeAdminLogin();
+                openAdminDashboard();
+            } else {
+                errorDiv.textContent = 'Invalid email or password';
+                errorDiv.classList.remove('hidden');
+            }
+        }
+
+        function openAdminDashboard() {
+            document.getElementById('adminDashboard').classList.remove('hidden');
+            loadOrdersData();
+            updateDashboardStats();
+        }
+
+        function loadOrdersData() {
+            const tbody = document.getElementById('ordersTableBody');
+            tbody.innerHTML = '';
+            
+            if (ordersData.length === 0) {
+                tbody.innerHTML = `
+                    <tr>
+                        <td colspan="7" class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 text-center">
+                            No orders yet
+                        </td>
+                    </tr>
+                `;
+                return;
+            }
+            
+            ordersData.forEach(order => {
+                const row = document.createElement('tr');
+                const statusClass = order.status === 'Completed' ? 'order-status-completed' : 
+                                  order.status === 'Pending' ? 'order-status-pending' : 'order-status-cancelled';
+                
+                row.innerHTML = `
+                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">${order.id}</td>
+                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">${order.customer}</td>
+                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">${order.email}</td>
+                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">$${order.total.toFixed(2)}</td>
+                    <td class="px-6 py-4 whitespace-nowrap">
+                        <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${statusClass}">
+                            ${order.status}
+                        </span>
+                    </td>
+                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">${order.date}</td>
+                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                        <button onclick="updateOrderStatus('${order.id}')" class="text-blue-600 hover:text-blue-900 mr-2">Edit</button>
+                        <button onclick="deleteOrder('${order.id}')" class="text-red-600 hover:text-red-900">Delete</button>
+                    </td>
+                `;
+                tbody.appendChild(row);
+            });
+        }
+
+        function updateDashboardStats() {
+            const totalOrders = ordersData.length;
+            const totalRevenue = ordersData.reduce((sum, order) => sum + order.total, 0);
+            const pendingOrders = ordersData.filter(order => order.status === 'Pending').length;
+            const completedOrders = ordersData.filter(order => order.status === 'Completed').length;
+            
+            document.getElementById('totalOrders').textContent = totalOrders;
+            document.getElementById('totalRevenue').textContent = `$${totalRevenue.toFixed(2)}`;
+            document.getElementById('pendingOrders').textContent = pendingOrders;
+            document.getElementById('completedOrders').textContent = completedOrders;
+        }
+
+        function updateOrderStatus(orderId) {
+            const order = ordersData.find(o => o.id === orderId);
+            if (order) {
+                const newStatus = prompt('Enter new status (Pending, Completed, Cancelled):', order.status);
+                if (newStatus && ['Pending', 'Completed', 'Cancelled'].includes(newStatus)) {
+                    order.status = newStatus;
+                    loadOrdersData();
+                    updateDashboardStats();
+                    localStorage.setItem('postureguard_orders', JSON.stringify(ordersData));
+                }
+            }
+        }
+
+        function deleteOrder(orderId) {
+            if (confirm('Are you sure you want to delete this order?')) {
+                ordersData = ordersData.filter(order => order.id !== orderId);
+                loadOrdersData();
+                updateDashboardStats();
+                localStorage.setItem('postureguard_orders', JSON.stringify(ordersData));
+            }
+        }
+
+        function exportOrders() {
+            if (ordersData.length === 0) {
+                alert('No orders to export');
+                return;
+            }
+            
+            const csvContent = "data:text/csv;charset=utf-8," 
+                + "Order ID,Customer,Email,Total,Status,Date\n"
+                + ordersData.map(order => 
+                    `${order.id},"${order.customer}","${order.email}",${order.total},${order.status},${order.date}`
+                ).join("\n");
+            
+            const encodedUri = encodeURI(csvContent);
+            const link = document.createElement("a");
+            link.setAttribute("href", encodedUri);
+            link.setAttribute("download", "postureguard-orders-" + new Date().toISOString().split('T')[0] + ".csv");
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+
+        // Policy Functions
+        function openPolicyModal(policyType) {
+            const modal = document.getElementById('policyModal');
+            const title = document.getElementById('policyTitle');
+            const content = document.getElementById('policyContent');
+            
+            if (policyContent[policyType]) {
+                title.textContent = policyContent[policyType].title;
+                content.innerHTML = policyContent[policyType].content;
+                modal.classList.remove('hidden');
+            }
+        }
+
+        function closePolicyModal() {
+            document.getElementById('policyModal').classList.add('hidden');
+        }
+
+        function openTrackingModal() {
+            alert('Please email support@postureguardpro.com with your order number for tracking information.');
+        }
+
+        function openReturnsModal() {
+            alert('For returns, please email support@postureguardpro.com with your order number.');
+        }
+
+        // Payment Functions
+        function buyNow() {
+            document.getElementById('paymentModal').classList.remove('hidden');
+            setupStripe();
+        }
+
+        function closePayment() {
+            document.getElementById('paymentModal').classList.add('hidden');
+        }
+
+        function setupStripe() {
+            const cardElement = elements.create('card', {
+                style: {
+                    base: {
+                        fontSize: '16px',
+                        color: '#424770',
+                        '::placeholder': {
+                            color: '#aab7c4',
+                        },
+                    },
+                },
+            });
+
+            cardElement.mount('#card-element');
+
+            const form = document.getElementById('payment-form');
+            form.addEventListener('submit', async (event) => {
+                event.preventDefault();
+
+                const {error, paymentMethod} = await stripe.createPaymentMethod({
+                    type: 'card',
+                    card: cardElement,
+                });
+
+                if (error) {
+                    showError(error.message);
+                } else {
+                    processPayment(paymentMethod.id);
+                }
+            });
+        }
+
+        function processPayment(paymentMethodId) {
+            setTimeout(() => {
+                const orderId = 'PG' + Math.random().toString(36).substr(2, 9).toUpperCase();
+                const newOrder = {
+                    id: orderId,
+                    customer: 'Customer',
+                    email: 'customer@email.com',
+                    total: 29.99,
+                    status: 'Completed',
+                    date: new Date().toISOString().split('T')[0]
+                };
+                ordersData.unshift(newOrder);
+                localStorage.setItem('postureguard_orders', JSON.stringify(ordersData));
+                
+                alert('Payment successful! Order #' + orderId + ' has been placed.');
+                closePayment();
+            }, 2000);
+        }
+
+        function showError(message) {
+            const errorElement = document.getElementById('card-errors');
+            errorElement.textContent = message;
+            errorElement.classList.remove('hidden');
+        }
+
+        // Contact Form
+        function submitContact(event) {
+            event.preventDefault();
+            alert('Thank you for your message! We\'ll get back to you within 24 hours.');
+            event.target.reset();
+        }
+
+        // Load orders from localStorage on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedOrders = localStorage.getItem('postureguard_orders');
+            if (savedOrders) {
+                ordersData = JSON.parse(savedOrders);
+            }
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Close modals when clicking outside
+        document.addEventListener('click', function(event) {
+            const adminLoginModal = document.getElementById('adminLoginModal');
+            const adminDashboard = document.getElementById('adminDashboard');
+            const policyModal = document.getElementById('policyModal');
+            const paymentModal = document.getElementById('paymentModal');
+            
+            if (event.target === adminLoginModal) {
+                closeAdminLogin();
+            }
+            if (event.target === adminDashboard) {
+                closeAdminDashboard();
+            }
+            if (event.target === policyModal) {
+                closePolicyModal();
+            }
+            if (event.target === paymentModal) {
+                closePayment();
+            }
+        });
+
+        // Close modals with Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeAdminLogin();
+                closeAdminDashboard();
+                closePolicyModal();
+                closePayment();
+            }
+        });
+    </script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"rayId":"974f61c33d556165","serverTiming":{"name":{"cfExtPri":true,"cfEdge":true,"cfOrigin":true,"cfL4":true,"cfSpeedBrain":true,"cfCacheStatus":true}},"version":"2025.8.0","token":"4edd5f8ec12a48cfa682ab8261b80a79"}' crossorigin="anonymous"></script>
+</body>
+</html>
+    <script id="html_badge_script1">
+        window.__genspark_remove_badge_link = "https://www.genspark.ai/api/html_badge/" +
+            "remove_badge?token=To%2FBnjzloZ3UfQdcSaYfDvRzxFI3pZAzDEqYjt5VKrU8rQ20R9w9mqP5W0idgbJlazTZ13IwKORHoOuz3DpXAcjWxJOWszqYtgFAVTOl07L4zDww%2F31ryAXpzeW3Qc6S40zVZLR7D9O5lQjiYaBlFJIvM8MaHv3jHEOlY1EBlwBJq6%2F4yhB%2B%2F7ja4cuxheohyxpbDazm8vKC7bdtzm1r2YmCsiRmtm112rT3sW1%2Brz3DdVU%2FTr6KsKAO9QssVYxOIenM1NOd9xB5uHbN8%2FmCPFQjFHvMbaqgaSTMR56qjvbdeNb1McrtG7KfXPMI8Jfzx61dOn4v3UlwzXAgiaBRPPen%2Fqg6%2F%2B9e%2FoRNCV%2BE4R%2FPoO6HI0nIFkcdQh3tXqu23I24PAd1Emn6cdswiGyzDcj4dNCR2m64Qp71%2FTICiJAEBcbQhozlfpTTfrQbfvgj9w72oJWi7dikz0Q70s8YL0EYYdmx8vzX%2BxFU%2BPrRYjYoA5FM039%2BZPz3qkITgwnFnub4JrPN4%2F22OY6Hnflpyb6v4OAUBPrrmfcE%2B0PnpUY%3D";
+        window.__genspark_locale = "en-US";
+        window.__genspark_token = "To/BnjzloZ3UfQdcSaYfDvRzxFI3pZAzDEqYjt5VKrU8rQ20R9w9mqP5W0idgbJlazTZ13IwKORHoOuz3DpXAcjWxJOWszqYtgFAVTOl07L4zDww/31ryAXpzeW3Qc6S40zVZLR7D9O5lQjiYaBlFJIvM8MaHv3jHEOlY1EBlwBJq6/4yhB+/7ja4cuxheohyxpbDazm8vKC7bdtzm1r2YmCsiRmtm112rT3sW1+rz3DdVU/Tr6KsKAO9QssVYxOIenM1NOd9xB5uHbN8/mCPFQjFHvMbaqgaSTMR56qjvbdeNb1McrtG7KfXPMI8Jfzx61dOn4v3UlwzXAgiaBRPPen/qg6/+9e/oRNCV+E4R/PoO6HI0nIFkcdQh3tXqu23I24PAd1Emn6cdswiGyzDcj4dNCR2m64Qp71/TICiJAEBcbQhozlfpTTfrQbfvgj9w72oJWi7dikz0Q70s8YL0EYYdmx8vzX+xFU+PrRYjYoA5FM039+ZPz3qkITgwnFnub4JrPN4/22OY6Hnflpyb6v4OAUBPrrmfcE+0PnpUY=";
+    </script>
+    
+    <script id="html_notice_dialog_script" src="https://www.genspark.ai/notice_dialog.js"></script>
+    
